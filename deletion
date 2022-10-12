@@ -1,0 +1,25 @@
+deletion of front node:
+ if (*head == del_node)
+    *head = del_node->next;
+
+if (del_node->prev != NULL)
+    del_node->prev->next = del_node->next;
+
+free(del);
+
+
+deletion of middle nodes:
+for node before the deleted node:
+
+if (del_node->next != NULL)
+    del_node->next->prev = del_node->prev;
+
+for node after the deleted node:
+
+if (del_node->prev != NULL)
+    del_node->prev->next = del_node->next;
+    
+    
+deletion of last node:
+if (del_node->prev != NULL)
+    del_node->prev->next = del_node->next;
